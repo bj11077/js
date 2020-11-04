@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap{width: 500px; height: 500px;
+	display:flex; flex-flow:row;}
+.div1{width:20%; height: 100%; text-align: center; 
+	display: flex; flex-flow:column;	}
+.div2{width:60%; height: 100%; text-align: center;  }
+.div3{width:20%; height: 100%; text-align: center;  }
+.left{width: 100%; height: 30%; margin-top: 150px;}
+.right{width: 100%; height: 30%; margin-top: 150px;}
+.cent{width: 100%; height: 100%;}
+
+</style>
+
+<script type="text/javascript">
+n = 1
+function mystart(){
+	mytime = setInterval(setImage , 1000)
+}
+
+	function setImage(){
+		if(n ==8){
+			n = 1
+		}else{
+			n = n + 1
+		}
+		document.getElementById('cent').src = "test"+n+".jpg"
+	}
+	
+
+	function mOver(obj){
+		clearInterval(mytime)
+	}
+	
+	function mOut(obj){
+		mytime = setInterval(setImage , 1000)
+	}
+	
+	function previousPicture(){
+		if(n == 1){
+			n =8
+		}else{
+			n = n-1
+
+		document.getElementById('cent').src="test"+ n +".jpg"
+		}
+	}
+
+	function nextPicture(){
+	
+		if(n == 8){
+			n = 1
+		}else{
+			n = n +1;
+		
+		document.getElementById('cent').src="test"+n+".jpg"
+		}
+	}	
+	
+	
+	
+</script>
+
+</head>
+<body onload="mystart()">
+<div id="wrap">
+<div class="div1">
+<img src="왼쪽화살표.jpg" class="left" onmousedown="previousPicture()" >
+</div>
+<div class="div2">
+<img src="test1.jpg" class="cent" id ="cent" onmouseover="mOver(this)" onmouseout="mOut(this)">
+</div>
+<div class="div3">
+<img src="오른쪽화살표.jpg" class="right" onmousedown="nextPicture()">
+</div>
+
+</div>
+
+
+</body>
+</html>
