@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+input{display: inline;}
+
+.p1{display:inline;  color: red;}
+
+.p2{display: inline;}
+</style>
+
+
+
+<script type="text/javascript">
+
+function test(){
+	var id = document.getElementById('id')
+	var pw = document.getElementById('pw')
+	var pwc = document.getElementById('pwc')
+	var p2 = document.getElementById('p2')
+	
+	console.log(id.value)
+	console.log(pw.value)
+	console.log(pwc.value)
+	if(id.value == '' || id.value == null){
+		alert('아이디는 필수 사항입니다.')
+	}else if(pw.value == '' || pw.value == null){
+		alert("비밀번호는 필수 사항입니다.")
+	}else if(pwc.value =='' || pwc.value == null){
+		alert("비밀번호 확인은 필수 사항입니다.")	
+		p2.innerHTML = "불일치"
+	}else{
+		if(pw.value == pwc.value){
+			p2.innerHTML = "확인"
+			fo.submit()
+			
+		}else{
+			alert("비밀번호 확인은 필수 사항입니다.")
+			
+		}
+		
+		
+	}
+	
+	
+}
+
+
+</script>
+
+
+</head>
+
+
+
+
+<body>
+	<form id="fo" action="success.html" method="get">
+		<input type="text" name="id" id="id" placeholder="아이디"><p class= "p1">(*필수항목)</p><br>
+		<input type="text" name="pw" id="pw" placeholder="비밀번호">
+		<p class= "p1">(*필수항목)</p><br>
+		<input type="text" name="pwc" id="pwc" placeholder="비밀번호확인">
+		<p class="p2" id="p2"></p><br>
+		<input type="text" name="nam" id="nam" placeholder="이름"><br>
+		<input type="button" value="btn" onclick="test()">
+	</form>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.img1{width:100px; height: 100px;}
+
+.div1{float: right; display: flex; flex-flow: column;}
+
+.div2{width:100px; height: 50px; background-color: red;}
+
+.p1{display: flex; flex-flow: column;}
+
+</style>
+
+<script type="text/javascript">
+
+var img
+
+var img2
+
+
+function load(){
+	document.getElementById('david').innerHTML ="내용없음"
+	
+}
+
+
+function add(src){
+
+	img = document.createElement('img')
+
+	img.setAttribute('src', src)
+	img.setAttribute('width', 100)
+	img.setAttribute('height', 100)
+	document.getElementById('imgg').appendChild(img)
+	
+	var vid =  document.getElementById('david')
+	vid.style.background = "green"
+	vid.innerHTML = "내용생김"
+}
+
+
+
+</script>
+
+
+
+
+</head>
+<body onload= "load()">
+
+<table border="1">
+
+<div class="div1">
+<div class="div2" id ="david"></div>
+<p class="p1" id="imgg"></p>
+</div>
+<tr>
+<th><img src="test1.jpg" class= "img1" id = "im1" onclick="add(src)"> </th>
+<th><img src="test2.jpg" class= "img1" id = "im2" onclick="add(src)"> </th>
+<th><img src="test3.jpg" class= "img1"  id = "im3" onclick="add(src)"> </th>
+<th><img src="test4.jpg" class= "img1" id = "im4" onclick="add(src)"> </th>
+</tr>
+
+<tr>
+<th><img src="test5.jpg" class= "img1" id = "im5" onclick="add(src)"> </th>
+<th><img src="test6.jpg" class= "img1" id = "im6" onclick="add(src)"> </th>
+<th><img src="test7.jpg" class= "img1" id = "im7" onclick="add(src)"> </th>
+<th><img src="test8.jpg" class= "img1" id = "im8" onclick="add(src)"> </th>
+</tr>
+
+</table>
+
+
+
+</body>
+</html>
